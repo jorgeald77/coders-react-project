@@ -5,3 +5,7 @@
 - git clone [protocol]://github.com/jorgeald77/coders-react-project.git
 - npm install
 - npm start
+
+## Entregables
+
+### #02
