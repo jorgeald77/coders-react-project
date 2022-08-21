@@ -24,7 +24,7 @@
     @apply inline-flex gap-x-3 text-sm uppercase;
 }
 
-.main-links li a span {
+.main-links li span {
     @apply inline-flex gap-x-3 text-sm uppercase;
 }
 
@@ -32,6 +32,6 @@
     @apply text-red-700;
 }
 
-.main-menu li {
+.main-menu li button {
     @apply uppercase tracking-wider cursor-pointer hover:text-red-700;
 }

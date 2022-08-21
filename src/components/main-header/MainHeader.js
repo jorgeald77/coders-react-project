@@ -57,9 +57,9 @@ function MainHeader() {
                 <div className='main-menu h-12 bg-stone-700'>
                     <nav className='h-full'>
                         <ul className='flex justify-center items-center gap-x-20 h-full'>
-                            <li><a href='/Users/jorge/OneDrive/Coderhouse/React/my-app/public'>inicio</a></li>
-                            <li><a href='/Users/jorge/OneDrive/Coderhouse/React/my-app/public'>conócenos</a></li>
-                            <li><a href='/Users/jorge/OneDrive/Coderhouse/React/my-app/public'>tienda</a></li>
+                            <li><button>inicio</button></li>
+                            <li><button>conócenos</button></li>
+                            <li><button>tienda</button></li>
                         </ul>
                     </nav>
                 </div>
