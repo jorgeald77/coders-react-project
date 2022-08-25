@@ -1,0 +1,28 @@
+.main-content {
+    min-height: 85vh;
+    display: grid;
+    column-gap: 0.25rem;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 2.5rem auto 4rem;
+    grid-template-areas:
+            'navigation navigation'
+            'aside-options main-content'
+            'aside-options foot';
+}
+
+.main-content > nav {
+    grid-area: navigation;
+}
+
+.main-content > aside {
+    grid-area: aside-options;
+}
+
+.main-content > section {
+    grid-area: main-content;
+    @apply px-4;
+}
+
+.main-content > footer {
+    grid-area: foot;
+}
