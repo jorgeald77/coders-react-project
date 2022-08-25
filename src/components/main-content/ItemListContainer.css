@@ -1,0 +1,15 @@
+.category-header {
+    @apply flex flex-col my-4;
+}
+
+.category-header--title {
+    @apply text-2xl font-bold tracking-tight text-stone-700;
+}
+
+.category-header--border {
+    @apply w-1/2 h-1 rounded-l-full bg-gradient-to-r from-red-500;
+}
+
+.section-items {
+    @apply mx-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6;
+}
