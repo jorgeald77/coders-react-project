@@ -1,5 +1,6 @@
 import logo from '../../logo.svg'
 import './MainHeader.css'
+import CartWidget from "./CartWidget";
 
 function MainHeader() {
     return (
@@ -39,27 +40,22 @@ function MainHeader() {
                             </svg>
                         </li>
                         <li>
-                            <div className='block text-right'>
-                                <p>mis compras</p>
-                                <p className='text-xs text-stone-500 lowercase'>
-                                   (0 productos)
-                                    <span className='text-red-700'> $ 0.00</span>
-                                </p>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round"
-                                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                            </svg>
+                            <CartWidget/>
                         </li>
                     </ul>
                 </div>
                 <div className='main-menu h-12 bg-stone-700'>
                     <nav className='h-full'>
                         <ul className='flex justify-center items-center gap-x-20 h-full'>
-                            <li><button>inicio</button></li>
-                            <li><button>conócenos</button></li>
-                            <li><button>tienda</button></li>
+                            <li>
+                                <button>inicio</button>
+                            </li>
+                            <li>
+                                <button>conócenos</button>
+                            </li>
+                            <li>
+                                <button>tienda</button>
+                            </li>
                         </ul>
                     </nav>
                 </div>
