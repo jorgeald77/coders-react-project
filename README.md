@@ -8,6 +8,9 @@
 
 ## Entregables
 
+### #01
+Creación de éste repositorio con el código base de un proyecto de React.
+
 ### #02
 ![Captura de Pantalla 2022-08-20 a la(s) 22 14 10](https://user-images.githubusercontent.com/14790269/185773901-85cedb7d-1284-4955-8f54-e46203857dc8.png)
 
