@@ -1,4 +1,5 @@
 import './ItemListContainer.css'
+import ItemCount from "./ItemCount";
 
 function ItemListContainer({greeting}) {
     return (
@@ -9,7 +10,7 @@ function ItemListContainer({greeting}) {
             </div>
 
             <section className='section-items'>
-                <p>N Productos</p>
+                <ItemCount stock='10' initial='1'/>
             </section>
         </div>
     )
