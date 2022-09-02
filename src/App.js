@@ -1,6 +1,6 @@
 import './App.css';
 import MainHeader from "./components/main-header/MainHeader";
-import ItemListContainer from "./components/main-content/ItemListContainer";
+import ItemListContainer from "./components/main-content/item-list-container/ItemListContainer";
 
 function App() {
     return (
@@ -13,7 +13,7 @@ function App() {
                 <nav></nav>
                 <aside></aside>
                 <section>
-                    <ItemListContainer greeting={'categoría'} />
+                    <ItemListContainer greeting={'categoría'}/>
                 </section>
                 <footer></footer>
             </main>
