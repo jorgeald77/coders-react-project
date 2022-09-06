@@ -21,10 +21,10 @@ const ItemList = () => {
     }, [])
 
     return (<div className='item-list'>
-
         {items.length > 0 ? items.map((item) => {
             return (<Item
                 key={item.id}
+                id={item.id}
                 title={item.title}
                 description={item.description}
                 price={item.price}
