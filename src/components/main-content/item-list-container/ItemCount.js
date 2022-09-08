@@ -1,8 +1,8 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const ItemCount = (props) => {
-    const [stock, setStock] = useState(parseInt(props.stock))
-    const [initial, setInitial] = useState(parseInt(props.initial))
+    const [stock, setStock] = useState(0)
+    const [initial, setInitial] = useState(parseInt(props.initials))
 
     const up = () => {
         if (initial < stock) {
@@ -16,11 +16,14 @@ const ItemCount = (props) => {
         }
     }
 
+    useEffect(() => {
+        setStock(parseInt(props.stocks))
+    }, [props.stocks])
+
     return (
-        <div className='p-2 min-w-fit shadow'>
+        <div className='p-2 w-full'>
             <div className='my-4 flex flex-col items-center'>
                 <div className='mb-10 w-full'>
-                    <h3 className='text-lg text-stone-700 font-semibold lowercase'>Título del producto</h3>
                     <p className='mb-4 text-xs text-stone-500 lowercase read-only:'>stock: {stock}</p>
                 </div>
 
