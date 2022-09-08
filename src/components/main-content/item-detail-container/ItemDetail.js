@@ -2,8 +2,8 @@ import ItemCount from "../item-list-container/ItemCount";
 
 function ItemDetail({item}) {
     return (
-        <div className='grid grid-cols-3 gap-x-4 grid-flow-row-dense'>
-            <div className='col-span-2 row-span-2'>
+        <div className='grid grid-cols-1 gap-y-4 md:grid-cols-3 gap-x-4 grid-flow-row-dense'>
+            <div className='md:col-span-2 md:row-span-2'>
                 <img src={`${item.pictureUrl}800?random=${item.id}`} alt="" className='h-fit'/>
             </div>
             <div>
