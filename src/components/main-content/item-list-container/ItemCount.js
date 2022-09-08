@@ -1,19 +1,24 @@
 import {useEffect, useState} from "react";
 
-const ItemCount = ({stocks, initials}) => {
-    const [stock, setStock] = useState(parseInt(stocks))
-    const [initial, setInitial] = useState(parseInt(initials))
+const ItemCount = (props) => {
+    const [stock, setStock] = useState(0)
+    const [initial, setInitial] = useState(parseInt(props.initials))
 
     const up = () => {
         if (initial < stock) {
             setInitial(initial + 1)
         }
     }
+
     const down = () => {
         if (initial > 1) {
             setInitial(initial - 1)
         }
     }
+
+    useEffect(() => {
+        setStock(parseInt(props.stocks))
+    }, [props.stocks])
 
     return (
         <div className='p-2 w-full'>

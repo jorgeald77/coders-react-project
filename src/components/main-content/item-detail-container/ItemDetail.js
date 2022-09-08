@@ -9,10 +9,10 @@ function ItemDetail({item}) {
             <div>
                 <h3 className='font-semibold text-2xl uppercase'>{item.title}</h3>
                 <p className='p-4'>{item.desc}</p>
-
+                <p className='p-4 font-semibold text-base'>$ {item.price}</p>
             </div>
-            <div className='w-full'>
-                <ItemCount stocks={10} initials={1}/>
+            <div>
+                <ItemCount stocks={item.stock} initials='1'/>
             </div>
         </div>
     )
