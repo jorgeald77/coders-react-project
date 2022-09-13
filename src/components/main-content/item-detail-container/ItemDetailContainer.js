@@ -1,30 +1,30 @@
 import ItemList from "../item-list-container/ItemList";
 import ItemDetail from "./ItemDetail";
 import {useEffect, useState} from "react";
-import mock from "../item-list-container/mock_items";
+import mock from "../../../data/mock_items";
+import {useParams} from "react-router-dom";
 
-const ItemDetailContainer = ({greeting}) => {
+const ItemDetailContainer = () => {
+    const {productoId} = useParams()
     const [item, setItem] = useState({})
 
-    function getItem() {
+    function getItem(id) {
         new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(mock)
             }, 2000)
         }).then(result => {
-            let numberRandom = Math.floor(Math.random() * (7 - 0)) + 0
-            let resultFilter = result[numberRandom]
-            setItem(resultFilter)
+            setItem(result.find(item => item.id === parseInt(id)))
         })
     }
 
     useEffect(() => {
-        getItem()
+        getItem(productoId)
     }, [])
 
     return (<div>
         <div className='category-header'>
-            <h2 className='category-header--title'>Item Detail Container</h2>
+            <h2 className='category-header--title'>{item.title}</h2>
             <div className='category-header--border'></div>
         </div>
 
