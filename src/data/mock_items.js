@@ -7,6 +7,7 @@ const mock = [
         price: 124,
         pictureUrl: 'https://picsum.photos/',
         stock: 0,
+        collection: 'running',
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ const mock = [
         price: 134,
         pictureUrl: 'https://picsum.photos/',
         stock: 3,
+        collection: 'running',
     },
     {
         id: 3,
@@ -25,6 +27,7 @@ const mock = [
         price: 156,
         pictureUrl: 'https://picsum.photos/',
         stock: 112,
+        collection: 'running',
     },
     {
         id: 4,
@@ -34,6 +37,7 @@ const mock = [
         price: 149,
         pictureUrl: 'https://picsum.photos/',
         stock: 11,
+        collection: 'senderismo',
     },
     {
         id: 5,
@@ -43,6 +47,7 @@ const mock = [
         price: 87,
         pictureUrl: 'https://picsum.photos/',
         stock: 7,
+        collection: 'senderismo',
     },
     {
         id: 6,
@@ -52,6 +57,7 @@ const mock = [
         price: 62,
         pictureUrl: 'https://picsum.photos/',
         stock: 13,
+        collection: 'senderismo',
     },
     {
         id: 7,
@@ -61,6 +67,7 @@ const mock = [
         price: 247,
         pictureUrl: 'https://picsum.photos/',
         stock: 22,
+        collection: 'trail',
     },
     {
         id: 8,
@@ -70,6 +77,17 @@ const mock = [
         price: 157,
         pictureUrl: 'https://picsum.photos/',
         stock: 8,
+        collection: 'trail',
+    },
+    {
+        id: 9,
+        title: 'título 9',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A magni neque dolore odio delectus saepe officia autem deleniti tempora eveniet sequi expedita voluptatem vitae enim debitis, vel maiores optio unde.Lorem ipsum dolor sit amet consectetur adipisicing elit. A magni neque dolore odio delectus saepe officia autem deleniti tempora eveniet sequi expedita voluptatem vitae enim debitis, vel maiores optio unde.',
+        price: 85,
+        pictureUrl: 'https://picsum.photos/',
+        stock: 3,
+        collection: 'trail',
     },
 ]
 

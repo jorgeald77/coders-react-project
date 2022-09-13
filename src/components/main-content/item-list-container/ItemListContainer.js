@@ -13,7 +13,7 @@ function ItemListContainer() {
             </div>
 
             <section className='section-items'>
-                <ItemList/>
+                <ItemList collection={coleccion}/>
             </section>
         </div>
     )

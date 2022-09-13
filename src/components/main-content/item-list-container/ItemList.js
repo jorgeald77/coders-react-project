@@ -3,7 +3,7 @@ import './ItemList.css'
 import {useEffect, useState} from "react";
 import Item from "./Item";
 
-const ItemList = () => {
+const ItemList = ({collection}) => {
     const [items, setItems] = useState([])
 
     function getData() {
@@ -12,7 +12,7 @@ const ItemList = () => {
                 resolve(mock)
             }, 2000)
         }).then(result => {
-            setItems(result)
+            setItems(result.filter( item =>  item.collection === collection))
         })
     }
 
