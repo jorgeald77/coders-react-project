@@ -1,7 +1,7 @@
 import ItemList from "../item-list-container/ItemList";
 import ItemDetail from "./ItemDetail";
 import {useEffect, useState} from "react";
-import mock from "../item-list-container/mock_items";
+import mock from "../../../data/mock_items";
 
 const ItemDetailContainer = ({greeting}) => {
     const [item, setItem] = useState({})

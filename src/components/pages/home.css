@@ -1,0 +1,20 @@
+.home-heade-container {
+    @apply m-0 w-full h-[500px];
+}
+.home-header-bg {
+    background-image: url("../../img/background.jpeg");
+    @apply bg-no-repeat bg-cover bg-left w-auto h-60 md:h-[500px];
+}
+
+.home-header-title {
+    @apply bg-white text-center overflow-auto w-full p-4
+    md:absolute md:top-[240px] md:bg-opacity-70 md:w-1/3 md:h-1/3;
+}
+
+.home-categoria-container {
+    @apply flex justify-evenly;
+}
+
+.home-categoria {
+    @apply h-fit w-48 flex flex-col justify-center pb-2;
+}

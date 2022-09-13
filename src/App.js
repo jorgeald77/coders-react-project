@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/main-content/item-detail-container
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Conocenos from "./components/pages/Conocenos";
 import Contacto from "./components/pages/Contacto";
+import Home from "./components/pages/Home";
 
 function App() {
     return (
@@ -17,11 +18,12 @@ function App() {
                 <main className='main-content'>
                     <section>
                         <Routes>
-                            <Route path='/' element={<ItemListContainer greeting='Página principal'/>}/>
+                            <Route path='/' element={<Home/>}/>
                             <Route path='/conocenos' element={<Conocenos/>}/>
                             <Route path='/contacto' element={<Contacto/>}/>
                             <Route path='/categoria' element={<ItemListContainer greeting='Filtrar por categoría'/>}/>
-                            <Route path='/promociones' element={<ItemListContainer greeting='Filtrar por promociones'/>}/>
+                            <Route path='/promociones'
+                                   element={<ItemListContainer greeting='Filtrar por promociones'/>}/>
                             <Route path='/item/code' element={<ItemDetailContainer greeting='Detalle item'/>}/>
                         </Routes>
                     </section>

@@ -1,4 +1,4 @@
-import mock from './mock_items'
+import mock from '../../../data/mock_items'
 import './ItemList.css'
 import {useEffect, useState} from "react";
 import Item from "./Item";
