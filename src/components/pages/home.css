@@ -12,7 +12,7 @@
 }
 
 .home-categoria-container {
-    @apply flex justify-evenly;
+    @apply flex flex-wrap justify-evenly;
 }
 
 .home-categoria {

@@ -3,7 +3,7 @@
 }
 
 .category-header--title {
-    @apply text-2xl font-bold tracking-tight text-stone-700;
+    @apply capitalize text-2xl font-bold tracking-tight text-stone-700;
 }
 
 .category-header--border {
