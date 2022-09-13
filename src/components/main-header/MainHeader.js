@@ -1,13 +1,16 @@
 import logo from '../../logo.svg'
 import './MainHeader.css'
 import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom";
 
 function MainHeader() {
     return (
         <div className='header-main-container'>
             <div className='header-main-slogan'>
                 <div className='slogan-logo'>
-                    <img src={logo} alt="logo react" className='w-28'/>
+                    <Link to='/'>
+                        <img src={logo} alt="logo react" className='w-28'/>
+                    </Link>
                 </div>
             </div>
 
@@ -20,21 +23,27 @@ function MainHeader() {
                     <nav className='h-full'>
                         <ul className='flex justify-around items-center h-full'>
                             <li>
-                                <p>promociones</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                                     viewBox="0 0 24 24"
-                                     stroke="currentColor" strokeWidth="2">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                          d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-                                </svg>
+                                <Link to='/promociones'>
+                                    <div className='flex space-x-2'>
+                                        <p>promociones</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
+                                                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                                        </svg>
+                                    </div>
+                                </Link>
                             </li>
                             <li>
-                                <div className='block text-right'>
-                                    <p>dudas</p>
-                                    <p className='text-xs text-stone-500 lowercase'>
-                                        contacto@empresa.com
-                                    </p>
-                                </div>
+                                <Link to='/contacto'>
+                                    <div className='block text-right'>
+                                        <p>dudas</p>
+                                        <p className='text-xs text-stone-500 lowercase'>
+                                            contacto@empresa.com
+                                        </p>
+                                    </div>
+                                </Link>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
                                      viewBox="0 0 24 24"
                                      stroke="currentColor" strokeWidth="2">
@@ -43,7 +52,9 @@ function MainHeader() {
                                 </svg>
                             </li>
                             <li>
-                                <CartWidget/>
+                                <Link to='/carrito'>
+                                    <CartWidget/>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
@@ -53,10 +64,14 @@ function MainHeader() {
                     <nav className='h-full'>
                         <ul className='flex justify-center items-center gap-x-20 h-full'>
                             <li>
-                                <button>inicio</button>
+                                <Link to='/'>
+                                    <button>inicio</button>
+                                </Link>
                             </li>
                             <li>
-                                <button>conócenos</button>
+                                <Link to='/conocenos'>
+                                    <button>conócenos</button>
+                                </Link>
                             </li>
                             <li>
                                 <button>tienda</button>
