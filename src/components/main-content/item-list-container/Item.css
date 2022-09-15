@@ -1,0 +1,7 @@
+.img-card {
+    @apply p-0.5 bg-stone-900 rounded border;
+}
+
+.btn-verdetalle {
+    @apply py-2 px-3 w-full rounded bg-stone-500 text-stone-200 text-sm tracking-wide uppercase hover:bg-stone-900 transition-colors duration-300;
+}

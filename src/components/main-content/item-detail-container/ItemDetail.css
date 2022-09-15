@@ -1,0 +1,15 @@
+.item-detail-container {
+    @apply grid grid-cols-1 gap-y-4 md:grid-cols-3 gap-x-4 grid-flow-row-dense;
+}
+
+.item-detail-container-image {
+    @apply md:col-span-2 md:row-span-2;
+}
+
+.item-detail-img {
+    @apply h-fit border-2 border-stone-400 shadow rounded-xl;
+}
+
+.item-price {
+    @apply p-4 font-semibold text-xl;
+}
