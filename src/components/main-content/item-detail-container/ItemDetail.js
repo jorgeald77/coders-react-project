@@ -1,4 +1,4 @@
-import ItemCount from "../item-list-container/ItemCount";
+import ItemCount from "../count/ItemCount";
 
 function ItemDetail({item}) {
     return (

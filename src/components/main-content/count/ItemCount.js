@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import './ItemCount.css'
+import {useEffect, useState} from "react"
 
 const ItemCount = (props) => {
     const [stock, setStock] = useState(0)
@@ -70,7 +71,7 @@ const ItemCount = (props) => {
                 )}
             </div>
 
-            <button className='py-2 px-3 w-full rounded bg-stone-500 text-stone-200 text-sm tracking-wide uppercase'>
+            <button className='button-agregar'>
                 agregar al carrito
             </button>
         </div>
