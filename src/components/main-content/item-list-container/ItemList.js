@@ -28,6 +28,7 @@ const ItemList = ({collection}) => {
                 title={item.title}
                 description={item.description}
                 price={item.price}
+                stock={item.stock}
                 pictureUrl={item.pictureUrl}
             />)
         }) : <p>Cargando</p>}
