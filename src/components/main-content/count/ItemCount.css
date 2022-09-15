@@ -11,5 +11,5 @@
 }
 
 .button-agregar {
-    @apply py-2 px-3 w-full rounded bg-stone-500 text-stone-200 text-sm tracking-wide uppercase;
+    @apply py-2 px-3 w-full rounded bg-stone-500 text-stone-200 text-sm tracking-wide uppercase hover:bg-red-700 transition-colors duration-300;
 }

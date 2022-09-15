@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Conocenos from "./components/pages/Conocenos";
 import Contacto from "./components/pages/Contacto";
 import Home from "./components/pages/Home";
+import Cart from "./components/pages/Cart";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                             <Route path='/promociones'
                                    element={<ItemListContainer greeting='Filtrar por promociones'/>}/>
                             <Route path='/producto/:productoId' element={<ItemDetailContainer/>}/>
+                            <Route path='/cart' element={<Cart/>}/>
                         </Routes>
                     </section>
                 </main>
