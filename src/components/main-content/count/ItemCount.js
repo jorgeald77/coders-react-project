@@ -24,10 +24,6 @@ const ItemCount = (props) => {
     return (
         <div className='p-2 w-full'>
             <div className='my-4 flex flex-col items-center'>
-                <div className='mb-10 w-full'>
-                    <p className='mb-4 text-xs text-stone-500 lowercase read-only:'>stock: {stock}</p>
-                </div>
-
                 {stock > 0 ? (
                     <div className='place-self-start relative h-10 w-24 mt-1 rounded-md shadow-sm'>
                         <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2'>
@@ -39,7 +35,7 @@ const ItemCount = (props) => {
                         <div className='absolute inset-y-0 right-0 h-full flex'>
                             <div className='h-full w-5 flex flex-col justify-between'>
                                 <button type='button' onClick={up}
-                                        className='h-full bg-stone-400 text-stone-700 rounded-tr-md'>
+                                        className='btnUp'>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="2" stroke="currentColor" className="w-4 h-4">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -48,7 +44,7 @@ const ItemCount = (props) => {
                                 </button>
 
                                 <button type='button' onClick={down}
-                                        className='h-full bg-stone-400 text-stone-700 rounded-br-md'>
+                                        className='btnDown'>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth="2" stroke="currentColor" className="w-4 h-4">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -59,7 +55,7 @@ const ItemCount = (props) => {
                         </div>
                     </div>
                 ) : (
-                    <p className='text-red-500 font-semibold tracking-widest uppercase'>
+                    <p className='agotado'>
                         Agotado
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                              strokeWidth="1.5"
