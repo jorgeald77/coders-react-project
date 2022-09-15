@@ -4,10 +4,10 @@ import {useState} from "react";
 import {Link} from "react-router-dom";
 
 function ItemDetail({item}) {
-    const [comprarCantidad, setComprarCantidad] = useState(0)
+    const [comprar, setComprar] = useState(0)
 
     const agregarCarrito = (data) => {
-        setComprarCantidad(parseInt(data))
+        setComprar(parseInt(data))
     }
 
     return (
@@ -19,15 +19,8 @@ function ItemDetail({item}) {
             <div>
                 <p>{item.desc}</p>
                 <p className='item-price'>$ {item.price}</p>
-                {
-                    comprarCantidad == 0 ? (
-                        <ItemCount stocks={item.stock} initials='1' agregarCarrito={agregarCarrito}/>
-                    ) : (
-                        <Link to={'/cart'}>
-                            <button>Finalizar compra</button>
-                        </Link>
-                    )
-                }
+                <ItemCount stocks={item.stock} initials='1' agregarCarrito={agregarCarrito}/>
+                {comprar > 0 && <p>Deseas adquirir: {comprar}</p>}
             </div>
         </div>
     )
