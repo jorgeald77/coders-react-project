@@ -9,11 +9,12 @@ export const CartProvider = ({children}) => {
     const [cantidad, setCantidad] = useState(0)
     const [total, setTotal] = useState(0)
 
+    // Agregar o actualizar un item al State List
     const add = (producto, cant) => {
         let newLista = getCopyList()
         let idx = indexProducto(producto.id)
         if (idx === -1) {
-            // Registrar producto nuevo
+            // Agregar Item
             newLista.push({
                 id: producto.id,
                 title: producto.title,
@@ -23,14 +24,14 @@ export const CartProvider = ({children}) => {
                 subtotal: cant * producto.price
             })
         } else {
-            // Actualizar Cantidad y Subtotal del Producto existente en lista
+            // Actualizar Item
             newLista[idx].cant = cant
             newLista[idx].subtotal = cant * newLista[idx].price
         }
         setLista(newLista)
     }
 
-
+    // Eliminar un item del State Lista.
     const remove = (productoId) => {
         let idx = indexProducto(productoId)
         if (idx >= 0) {
@@ -40,24 +41,24 @@ export const CartProvider = ({children}) => {
         }
     }
 
-    // Reiniciar Lista de State a vacia.
+    // Reiniciar el State Lista.
     const clean = () => {
         setLista([])
     }
 
-    // Obtener una copia de la lista de State
+    // Obtener una copia del State Lista.
     function getCopyList() {
         return [...lista]
     }
 
-    /* Devuelve el index del producto en la Lista.
+    /* Devuelve el index del producto en el State Lista.
         Con esta posición eliminamos o editamos el registro si existe.
     */
     function indexProducto(productoId) {
         return lista.findIndex(el => el.id === productoId)
     }
 
-    // Se ejecuta para calcular el total y la cantidad de producto, cada vez que lista cambia.
+    // Se ejecuta para calcular el total y la cantidad de producto, cada vez que State Lista cambia.
     useEffect(() => {
         setCantidad(lista.length)
         setTotal(lista.reduce((acc, item) => {
