@@ -15,7 +15,8 @@ export const CartProvider = ({children}) => {
             title: producto.title,
             pictureUrl: producto.pictureUrl,
             price: producto.price,
-            cant: cant
+            cant: cant,
+            subtotal: cant * producto.price
         })
         setLista(newLista)
     }
@@ -40,7 +41,7 @@ export const CartProvider = ({children}) => {
     useEffect(() => {
         setCantidad(lista.length)
         setTotal(lista.reduce((acc, item) => {
-            return acc + (item.price * item.cant)
+            return acc + item.subtotal
         }, 0))
     }, [lista])
 
