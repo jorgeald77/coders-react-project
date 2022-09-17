@@ -13,13 +13,14 @@ function App() {
     return (
         <BrowserRouter>
             <>
-                <header>
-                    <MainHeader/>
-                </header>
+                <CartProvider>
+                    <header>
+                        <MainHeader/>
+                    </header>
 
-                <main className='main-content'>
-                    <section>
-                        <CartProvider>
+                    <main className='main-content'>
+                        <section>
+
                             <Routes>
                                 <Route path='/' element={<Home/>}/>
                                 <Route path='/conocenos' element={<Conocenos/>}/>
@@ -30,9 +31,9 @@ function App() {
                                 <Route path='/producto/:productoId' element={<ItemDetailContainer/>}/>
                                 <Route path='/cart' element={<Cart/>}/>
                             </Routes>
-                        </CartProvider>
-                    </section>
-                </main>
+                        </section>
+                    </main>
+                </CartProvider>
 
                 <footer></footer>
             </>

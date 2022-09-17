@@ -1,16 +1,20 @@
 import './CartWidget.css'
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {CartContext} from "../../context/CartContext";
 
 function CartWidget() {
+    const value = useContext(CartContext)
+
     return (
         <div className='cart-container'>
             <div className='text-right'>
                 <p>mis compras</p>
                 <p className='text-xs text-stone-500 lowercase'>
-                    0 productos
+                    {value.cantidad} productos
                 </p>
                 <p className='text-moneda font-bold text-red-700'>
-                    0.00
+                    {value.total}
                 </p>
             </div>
 
