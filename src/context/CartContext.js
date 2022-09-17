@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react"
+import {list} from "postcss";
 
 export const CartContext = React.createContext();
 
@@ -8,12 +9,14 @@ export const CartProvider = ({children}) => {
     const [total, setTotal] = useState(0)
 
     const add = (producto, cant) => {
-        const newProduct = {
-            ...producto,
-            cant
-        }
         const newLista = [...lista]
-        newLista.push(newProduct)
+        newLista.push({
+            id: producto.id,
+            title: producto.title,
+            pictureUrl: producto.pictureUrl,
+            price: producto.price,
+            cant: cant
+        })
         setLista(newLista)
     }
 
@@ -36,7 +39,9 @@ export const CartProvider = ({children}) => {
 
     useEffect(() => {
         setCantidad(lista.length)
-        // Todo Calcular total reduce
+        setTotal(lista.reduce((acc, item) => {
+            return acc + (item.price * item.cant)
+        }, 0))
     }, [lista])
 
     return (

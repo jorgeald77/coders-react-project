@@ -1,6 +1,6 @@
 import './ItemDetail.css'
 import ItemCount from "../count/ItemCount"
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {CartContext} from "../../../context/CartContext";
 
 function ItemDetail({item}) {
@@ -9,7 +9,7 @@ function ItemDetail({item}) {
 
     const agregarCarrito = (data) => {
         setComprar(parseInt(data))
-        value.add(item, comprar)
+        value.add(item, data)
     }
 
     return (
