@@ -4,8 +4,6 @@ import {CartContext} from "../../context/CartContext";
 export default function Cart() {
     const {lista, remove, clean} = useContext(CartContext)
 
-    // TODO  Dar estilo y usabilidad a la página de Car
-
     return (<>
         <h3>Página para finalizar la compra y validar productos</h3>
         <button onClick={() => clean()}>Vaciar carrito</button>
