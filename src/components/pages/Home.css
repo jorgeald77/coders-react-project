@@ -18,3 +18,7 @@
 .home-categoria {
     @apply h-fit w-48 flex flex-col justify-center pb-2;
 }
+
+.home-categoria-img {
+    @apply object-cover w-48 h-60 skew-y-12 my-6 hover:skew-y-0 transition-transform duration-500 shadow-md;
+}

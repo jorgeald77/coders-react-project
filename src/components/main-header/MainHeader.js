@@ -52,9 +52,7 @@ function MainHeader() {
                                 </svg>
                             </li>
                             <li>
-                                <Link to='/carrito'>
-                                    <CartWidget/>
-                                </Link>
+                                <CartWidget/>
                             </li>
                         </ul>
                     </nav>
