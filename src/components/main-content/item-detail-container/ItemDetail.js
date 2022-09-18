@@ -1,6 +1,6 @@
 import './ItemDetail.css'
 import ItemCount from "../count/ItemCount"
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import {CartContext} from "../../../context/CartContext";
 
 function ItemDetail({item}) {

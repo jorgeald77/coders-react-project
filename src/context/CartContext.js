@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react"
-import {list} from "postcss";
-import itemDetail from "../components/main-content/item-detail-container/ItemDetail";
 
 export const CartContext = React.createContext();
 
