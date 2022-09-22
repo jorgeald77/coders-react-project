@@ -34,3 +34,6 @@ Creación de éste repositorio con el código base de un proyecto de React.
 
 ### 09
 ![Captura de Pantalla 2022-09-17 a la(s) 20 24 53](https://user-images.githubusercontent.com/14790269/190881809-a33b35c6-798b-4c56-806e-c89db4685a46.png)
+
+### 10
+![entregable10](https://user-images.githubusercontent.com/14790269/191639540-f313d869-e640-4fee-af4a-3b7f015f991e.jpg)
