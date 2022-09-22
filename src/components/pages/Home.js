@@ -11,12 +11,6 @@ export default function Home() {
                 <div className='home-header-bg'/>
                 <div className='home-header-title'>
                     <p className='uppercase font-semibold text-5xl md:text-left'>CONECTA CON LA NATURALEZA</p>
-
-                    {/* TODO agregar clasificación de sexo a los productos
-                    <div className='flex justify-evenly my-8 md:my-16'>
-                        <button className='border rounded-full px-4 py-1'>Mujer</button>
-                        <button className='border rounded-full px-4 py-1'>Hombre</button>
-                    </div>*/}
                 </div>
             </div>
 

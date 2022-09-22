@@ -6,6 +6,10 @@
     @apply capitalize text-2xl font-bold tracking-tight text-stone-700;
 }
 
+.category-header--subtitle {
+    @apply capitalize text-lg font-bold tracking-tight text-stone-700;
+}
+
 .category-header--border {
     @apply w-1/2 h-1 rounded-l-full bg-gradient-to-r from-red-500;
 }
