@@ -12,7 +12,7 @@ export default function Cart() {
                 <div className='category-header--border'></div>
             </div>
             <div>
-                {lista.length == 0
+                {lista.length === 0
                     ?
                     <div>
                         <p className='my-6'>"Tu carrito está vacío...."</p>
@@ -65,15 +65,15 @@ export default function Cart() {
                                 <ol className='my-8 divide-y divide-stone-400'>
                                     <li className='flex h-8 justify-between'>
                                         <p>subtotal</p>
-                                        <p>$ {parseInt(total) - (parseInt(total) * 0.16)}</p>
+                                        <p>$ {(parseInt(total) - (parseInt(total) * 0.16)).toFixed(2)}</p>
                                     </li>
                                     <li className='flex h-8 justify-between'>
                                         <p>16% iva</p>
-                                        <p>$ {(parseInt(total) * 0.16)}</p>
+                                        <p>$ {(parseInt(total) * 0.16).toFixed(2)}</p>
                                     </li>
                                     <li className='flex h-8 justify-between'>
                                         <p>total</p>
-                                        <p>$ {parseInt(total)}</p>
+                                        <p>$ {parseInt(total).toFixed(2)}</p>
                                     </li>
                                 </ol>
                             </div>
