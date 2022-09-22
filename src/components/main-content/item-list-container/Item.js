@@ -10,9 +10,7 @@ const Item = (props) => {
                 <p>{props.description}</p>
                 <div className='mt-4 flex justify-between items-center'>
                     <p>$ {props.price}</p>
-                    {parseInt(props.stock) == 0 &&
-                        <p className='text-red-500'>NO DISPONIBLE</p>
-                    }
+                    {parseInt(props.stock) == 0 && <p className='text-red-500'>NO DISPONIBLE</p>}
                 </div>
                 <Link to={`/producto/${props.id}`}>
                     <button className='btn-verdetalle mt-4'>Ver detalle</button>
