@@ -23,10 +23,9 @@ const ItemList = ({collection}) => {
     return (<div className='item-list'>
         {items.length > 0 ? items.map((item) => {
             return (<Item
-                key={item.id}
+                key={item.sku}
                 id={item.id}
                 title={item.title}
-                description={item.description}
                 price={item.price}
                 stock={item.stock}
                 pictureUrl={item.pictureUrl}

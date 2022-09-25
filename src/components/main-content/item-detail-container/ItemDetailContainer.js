@@ -22,12 +22,7 @@ const ItemDetailContainer = () => {
         getItem(productoId)
     }, [])
 
-    return (<div>
-        <div className='category-header'>
-            <h2 className='category-header--title'>{item.title}</h2>
-            <div className='category-header--border'></div>
-        </div>
-
+    return (<div className='my-10'>
         <section className='section-items'>
             <ItemDetail item={item}/>
         </section>
