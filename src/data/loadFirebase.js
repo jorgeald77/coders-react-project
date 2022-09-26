@@ -1,3 +1,18 @@
+const {initializeApp} = require("firebase/app")
+const {getFirestore, collection, addDoc} = require("firebase/firestore")
+const firebaseConfig = {
+    apiKey: "AIzaSyA5h0Jz1qO6L8qFkUP4ilOqMDXvz0x_nJQ",
+    authDomain: "coders-ecommerce.firebaseapp.com",
+    projectId: "coders-ecommerce",
+    storageBucket: "coders-ecommerce.appspot.com",
+    messagingSenderId: "281053525322",
+    appId: "1:281053525322:web:6978c6a88453e3f652fdb3"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
+const queryCollection = collection(db, 'items')
+
+console.log("File working")
 const mock = [
     {
         sku: 'L4146230021',
@@ -167,4 +182,22 @@ const mock = [
 
 ]
 
-export default mock
+mock.forEach((obj, index, array) => {
+    const newItem = {
+        sku: obj.sku,
+        title: obj.title,
+        description: obj.description,
+        price: obj.price,
+        stock: obj.stock,
+        collection: obj.collection,
+        pictureUrl: obj.pictureUrl
+    }
+
+    addDoc(queryCollection, newItem)
+        .then(docRef => {
+            console.log("Documento escrito con ID: ", docRef.id)
+        })
+        .catch(error => {
+            console.error("No se pudo agregar el Item", error)
+        })
+})

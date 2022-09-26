@@ -1,6 +1,5 @@
-import mock from '../../../data/mock_items'
 import {db} from '../../../utils/firebase'
-import {collection as dbCollection, query, where, docs, getDocs, doc} from 'firebase/firestore'
+import {collection as dbCollection, query, where, getDocs} from 'firebase/firestore'
 
 import './ItemList.css'
 import {useEffect, useState} from "react";
@@ -10,14 +9,15 @@ const ItemList = ({collection}) => {
     const [items, setItems] = useState([])
 
     async function getData() {
-        const q = query(dbCollection(db, 'items'), where('collection', '==', collection))
-        const response = (await getDocs(q)).docs.map(el => {
+        const queryRef = query(dbCollection(db, 'items'), where('collection', '==', collection))
+        const response = (await getDocs(queryRef));
+        const data = response.docs.map(el => {
             return {
                 id: el.id,
                 ...el.data()
             }
         })
-        setItems(response)
+        setItems(data)
     }
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const ItemList = ({collection}) => {
     return (<div className='item-list'>
         {items.length > 0 ? items.map((item) => {
             return (<Item
-                key={item.id}
+                key={item.sku}
                 id={item.id}
                 title={item.title}
                 price={item.price}
