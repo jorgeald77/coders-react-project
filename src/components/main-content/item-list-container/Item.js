@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Item = (props) => {
     return (
         <div className='w-60 shadow rounded'>
-            <img src={`${props.pictureUrl}300?random=${props.id}`} alt='img' className='img-card'/>
+            <img src={`${props.pictureUrl}`} alt='img' className='img-card'/>
             <div className='flex flex-col text-xs py-4 px-2'>
                 <p className='text-base font-semibold'>{props.title}</p>
                 <p>{props.description}</p>
