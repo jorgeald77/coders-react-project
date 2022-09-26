@@ -1,33 +1,28 @@
-import ItemList from "../item-list-container/ItemList";
+import {db} from '../../../utils/firebase'
+import {doc, getDoc} from 'firebase/firestore'
 import ItemDetail from "./ItemDetail";
 import {useEffect, useState} from "react";
-import mock from "../../../data/mock_items";
 import {useParams} from "react-router-dom";
 
 const ItemDetailContainer = () => {
     const {productoId} = useParams()
     const [item, setItem] = useState({})
 
-    function getItem(id) {
-        new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(mock)
-            }, 2000)
-        }).then(result => {
-            setItem(result.find(item => item.id === parseInt(id)))
-        })
+    async function getItem() {
+        const queryRef = doc(db, 'items', productoId)
+        const response = await getDoc(queryRef)
+        setItem({
+                id: response.id,
+                ...response.data()
+            }
+        )
     }
 
     useEffect(() => {
-        getItem(productoId)
+        getItem()
     }, [])
 
-    return (<div>
-        <div className='category-header'>
-            <h2 className='category-header--title'>{item.title}</h2>
-            <div className='category-header--border'></div>
-        </div>
-
+    return (<div className='my-10'>
         <section className='section-items'>
             <ItemDetail item={item}/>
         </section>

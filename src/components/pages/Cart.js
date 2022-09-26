@@ -23,19 +23,19 @@ export default function Cart() {
                     :
                     <div className='flex flex-col space-y-2 md:flex-row md:space-x-10 md:space-y-0'>
                         <div className='p-2 md:w-2/3'>
-                            <table className='table-fixed w-full'>
+                            <table className='w-full overflow-scroll'>
                                 <thead>
                                 <tr>
                                     <th className='text-center'>producto</th>
                                     <th className='text-right w-24'>precio</th>
-                                    <th className='text-right w-20'>cantidad</th>
+                                    <th className='text-right w-20'>cant.</th>
                                     <th className='text-right w-24'>total</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {lista.map(item => (
-                                    <tr className='border-b'>
-                                        <td className='flex px-2 my-3 justify-start items-center space-x-4'>
+                                    <tr className='border-b text-sm'>
+                                        <td className='flex px-2 my-3 justify-start items-center whitespace-nowrap space-x-4'>
                                             <button onClick={() => remove(item.id)}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                      fill="currentColor" className="w-5 h-5">
@@ -44,8 +44,7 @@ export default function Cart() {
                                                           clip-rule="evenodd"/>
                                                 </svg>
                                             </button>
-                                            <img src={`${item.pictureUrl}70?random=${item.id}`} alt="img"
-                                                 height='20px'/>
+                                            <img className='object-contain h-20' src={`${item.pictureUrl}70?random=${item.id}`} alt="img"/>
                                             <p>{item.title}</p>
                                         </td>
                                         <td className='text-right'>$ {item.price}</td>

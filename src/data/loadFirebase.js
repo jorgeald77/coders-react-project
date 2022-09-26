@@ -1,3 +1,18 @@
+const {initializeApp} = require("firebase/app")
+const {getFirestore, collection, addDoc} = require("firebase/firestore")
+const firebaseConfig = {
+    apiKey: "AIzaSyA5h0Jz1qO6L8qFkUP4ilOqMDXvz0x_nJQ",
+    authDomain: "coders-ecommerce.firebaseapp.com",
+    projectId: "coders-ecommerce",
+    storageBucket: "coders-ecommerce.appspot.com",
+    messagingSenderId: "281053525322",
+    appId: "1:281053525322:web:6978c6a88453e3f652fdb3"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
+const queryCollection = collection(db, 'items')
+
+console.log("File working")
 const mock = [
     {
         sku: 'L4146230021',
@@ -6,7 +21,7 @@ const mock = [
         price: 3299,
         stock: 10,
         collection: 'trail',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41462300_0_720x.jpeg?alt=media&token=1cdf646c-fe47-4e0e-97c6-71e716166885',
 
     },
     {
@@ -16,7 +31,7 @@ const mock = [
         price: 2026,
         stock: 12,
         collection: 'trail',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41430400_0_720x.jpeg?alt=media&token=cf5c0c0b-eba0-4235-8c65-ab5b1ea064aa',
     },
     {
         sku: 'L4159700028',
@@ -25,7 +40,7 @@ const mock = [
         price: 2099,
         stock: 11,
         collection: 'trail',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41597000_0_720x.jpeg?alt=media&token=d4dcb5bf-8e21-43ce-b1df-9b765d11f2a5',
     },
     {
         sku: 'L4144680027',
@@ -34,7 +49,7 @@ const mock = [
         price: 2649,
         stock: 15,
         collection: 'trail',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41446800_0_720x.jpeg?alt=media&token=c70836c5-91b7-4afb-9d55-5217e2c65f83',
     },
     {
         sku: 'L4159490035',
@@ -43,7 +58,7 @@ const mock = [
         price: 2499,
         stock: 7,
         collection: 'trail',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41594900_0_720x.jpeg?alt=media&token=e1f3dec5-5c15-4b74-81ec-e9940c9a97b0',
     },
     {
         sku: 'L4144470021',
@@ -52,7 +67,7 @@ const mock = [
         price: 3040,
         stock: 13,
         collection: 'trail',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41444700_0_720x.jpeg?alt=media&token=2a09f262-8c97-4405-80f3-a347022aa24d',
     },
 
     {
@@ -62,7 +77,7 @@ const mock = [
         price: 3399,
         stock: 22,
         collection: 'running',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41710100_0_720x.jpeg?alt=media&token=ed7af5e2-9c80-4a3a-9f35-1bf0964f43b1',
     },
     {
         sku: 'L4144330034',
@@ -71,7 +86,7 @@ const mock = [
         price: 3199,
         stock: 8,
         collection: 'running',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41443300_0_720x.jpeg?alt=media&token=3dc73afb-a549-410a-8902-1bab7f00fa0e',
     },
     {
         sku: 'L4144820009',
@@ -80,7 +95,7 @@ const mock = [
         price: 1646,
         stock: 6,
         collection: 'running',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41448200_0_720x.jpeg?alt=media&token=3df16d85-e06a-404d-87f5-6a65687c557a',
     },
     {
         sku: 'L4158970027',
@@ -89,7 +104,7 @@ const mock = [
         price: 2899,
         stock: 9,
         collection: 'running',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41589700_0_720x.jpeg?alt=media&token=67b31eb7-2097-479a-bc20-e1f8af990e44',
     },
     {
         sku: 'L4130800029',
@@ -98,7 +113,7 @@ const mock = [
         price: 2699,
         stock: 10,
         collection: 'running',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41308000_0_720x.jpeg?alt=media&token=9dd5bbe1-602a-46f5-be14-75d2a52032f6',
     },
     {
         sku: 'L4122820021',
@@ -107,7 +122,7 @@ const mock = [
         price: 4349,
         stock: 8,
         collection: 'running',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41228200_0_720x.jpeg?alt=media&token=3a701885-f7ed-42ff-8332-c7e47319949b',
     },
 
     {
@@ -117,7 +132,7 @@ const mock = [
         price: 4199,
         stock: 13,
         collection: 'senderismo',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41442700_0_720x.jpeg?alt=media&token=f00aded8-29fa-4dcf-b13a-dfa87aca36e6',
     },
     {
         sku: 'L4134870027',
@@ -126,7 +141,7 @@ const mock = [
         price: 4560,
         stock: 7,
         collection: 'senderismo',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41348700_0_720x.jpeg?alt=media&token=abd5c861-dbad-406a-82de-09ff2c670c27',
     },
     {
         sku: 'L4160090021',
@@ -135,7 +150,7 @@ const mock = [
         price: 3899,
         stock: 10,
         collection: 'senderismo',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41600900_0_720x.jpeg?alt=media&token=8c091b86-cb62-410a-98af-4aa1644a8f4d',
     },
     {
         sku: 'L4162450033',
@@ -144,7 +159,7 @@ const mock = [
         price: 4448,
         stock: 15,
         collection: 'senderismo',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41624500_0_720x.jpeg?alt=media&token=e1b20178-8e1f-4ec2-97a2-b822efefd012',
     },
     {
         sku: 'L4013820020',
@@ -153,7 +168,7 @@ const mock = [
         price: 4349,
         stock: 10,
         collection: 'senderismo',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL40138200_0_720x.jpeg?alt=media&token=55e17d6d-e73a-45d6-8ff3-93089a8bb991',
     },
     {
         sku: 'L4162560021',
@@ -162,9 +177,27 @@ const mock = [
         price: 3899,
         stock: 10,
         collection: 'senderismo',
-        pictureUrl: ['https://picsum.photos/'],
+        pictureUrl: 'https://firebasestorage.googleapis.com/v0/b/coders-ecommerce.appspot.com/o/items%2FL41625600_0_720x.jpeg?alt=media&token=a221862c-cf71-493a-8401-72d109734a05',
     },
 
 ]
 
-export default mock
+mock.forEach((obj, index, array) => {
+    const newItem = {
+        sku: obj.sku,
+        title: obj.title,
+        description: obj.description,
+        price: obj.price,
+        stock: obj.stock,
+        collection: obj.collection,
+        pictureUrl: obj.pictureUrl
+    }
+
+    addDoc(queryCollection, newItem)
+        .then(docRef => {
+            console.log("Documento escrito con ID: ", docRef.id)
+        })
+        .catch(error => {
+            console.error("No se pudo agregar el Item", error)
+        })
+})
