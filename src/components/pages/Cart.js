@@ -1,9 +1,12 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {CartContext} from "../../context/CartContext";
 import {Link} from "react-router-dom";
+import {db} from '../../utils/firebase'
+import {addDoc, collection} from "firebase/firestore";
 
 export default function Cart() {
     const {lista, remove, clean, total} = useContext(CartContext)
+    const [orderId, setOrderId] = useState('')
 
     const comprarProductos = (event) => {
         event.preventDefault()
@@ -13,10 +16,15 @@ export default function Cart() {
                 phone: event.target.telefono.value,
                 email: event.target.correo.value,
             },
-            items: [lista],
+            items: lista,
             fechaCompra: new Date(),
             compraTotal: total,
         }
+
+        addDoc(collection(db, 'orders'), pedido)
+            .then(response => {
+                setOrderId(response.id)
+            })
     }
 
     return (
@@ -85,7 +93,6 @@ export default function Cart() {
                                     <p>$ {parseInt(total).toFixed(2)}</p>
                                 </li>
                             </ol>
-
                             <form onSubmit={comprarProductos}>
                                 <div className='flex flex-col space-y-2 px-4'>
                                     <div>
@@ -109,7 +116,7 @@ export default function Cart() {
                                     </div>
                                 </div>
                                 <button type='submit'
-                                        className='mt-10 py-1.5 w-full bg-red-900 text-stone-300 font-bold'>Comprar
+                                        className='mt-10 py-1.5 w-full bg-red-900 text-stone-300 font-bold hover:bg-red-700'>Comprar
                                 </button>
                             </form>
 
