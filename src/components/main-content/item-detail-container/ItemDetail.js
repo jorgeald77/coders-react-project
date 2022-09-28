@@ -27,7 +27,7 @@ function ItemDetail({item}) {
                 <p className='text-sm mt-6'>{item.description}</p>
                 <p className='item-price mt-4'>$ {item.price}</p>
                 {comprar > 0 ? <Link to={'/cart'}>
-                    <button className='button-agregar'>Finalizar compra</button>
+                    <button className='button-agregar'>Ver carrito</button>
                 </Link> : <ItemCount stocks={item.stock} initials='1' agregarCarrito={agregarCarrito}/>}
 
                 <div>
