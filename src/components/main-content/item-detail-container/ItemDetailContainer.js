@@ -8,19 +8,19 @@ const ItemDetailContainer = () => {
     const {productoId} = useParams()
     const [item, setItem] = useState({})
 
-    async function getItem() {
-        const queryRef = doc(db, 'items', productoId)
-        const response = await getDoc(queryRef)
-        setItem({
-                id: response.id,
-                ...response.data()
-            }
-        )
-    }
-
     useEffect(() => {
+        async function getItem() {
+            const queryRef = doc(db, 'items', productoId)
+            const response = await getDoc(queryRef)
+            setItem({
+                    id: response.id,
+                    ...response.data()
+                }
+            )
+        }
+
         getItem()
-    }, [])
+    }, [productoId])
 
     return (<div className='my-10'>
         <section className='section-items'>

@@ -1,25 +1,34 @@
-import {useContext, useState} from "react";
-import {CartContext} from "../../context/CartContext";
-import {Link} from "react-router-dom";
+import {useContext, useState} from "react"
+import {CartContext} from "../../context/CartContext"
+import {Link} from "react-router-dom"
 import {db} from '../../utils/firebase'
-import {addDoc, collection} from "firebase/firestore";
+import {addDoc, collection} from "firebase/firestore"
+import OverviewCompra from "./cart/OverviewCompra";
 
 export default function Cart() {
     const {lista, remove, clean, total} = useContext(CartContext)
-    const [orderId, setOrderId] = useState('')
+    const [pedido, setPedido] = useState({})
 
     const comprarProductos = (event) => {
         event.preventDefault()
-        const pedido = {
+        const data = {
             buyer: {
-                name: event.target.nombre.value, phone: event.target.telefono.value, email: event.target.correo.value,
-            }, items: lista, fechaCompra: new Date(), compraTotal: total,
+                name: event.target.nombre.value,
+                phone: event.target.telefono.value,
+                email: event.target.correo.value,
+            },
+            items: lista,
+            fechaCompra: new Date(),
+            compraTotal: total,
         }
 
-        addDoc(collection(db, 'orders'), pedido)
-            .then(response => {
-                setOrderId(response.id)
-                clean();
+        addDoc(collection(db, 'orders'), data)
+            .then((response) => {
+                setPedido({
+                    id: response.id,
+                    ...data,
+                })
+                clean()
             })
     }
 
@@ -29,10 +38,9 @@ export default function Cart() {
             <div className='category-header--border'></div>
         </div>
         <div>
-            {orderId !== ''
+            {pedido.hasOwnProperty('id') && pedido.id !== ''
                 ?
-                <button className='mt-10 py-1.5 w-full bg-green-900 text-stone-300' disabled>Gracias
-                    por tu compra<br/>{orderId}</button>
+                <OverviewCompra compra={pedido}></OverviewCompra>
                 :
                 lista.length === 0
                     ?
@@ -66,7 +74,7 @@ export default function Cart() {
                                             </svg>
                                         </button>
                                         <img className='object-contain h-20 rounded-full shadow'
-                                             src={`${item.pictureUrl}70?random=${item.id}`} alt="img"/>
+                                             src={`${item.pictureUrl}`} alt="img"/>
                                         <p>{item.title}</p>
                                     </td>
                                     <td className='text-right'>$ {item.price}</td>
