@@ -7,21 +7,21 @@ import Item from "./Item";
 const ItemList = ({collection}) => {
     const [items, setItems] = useState([])
 
-    async function getData() {
-        const queryRef = query(dbCollection(db, 'items'), where('collection', '==', collection))
-        const response = await getDocs(queryRef);
-        const data = response.docs.map(el => {
-            return {
-                id: el.id,
-                ...el.data()
-            }
-        })
-        setItems(data)
-    }
-
     useEffect(() => {
+        async function getData() {
+            const queryRef = query(dbCollection(db, 'items'), where('collection', '==', collection))
+            const response = await getDocs(queryRef);
+            const data = response.docs.map(el => {
+                return {
+                    id: el.id,
+                    ...el.data()
+                }
+            })
+            setItems(data)
+        }
+
         getData()
-    }, [])
+    }, [collection])
 
     return (<div className='item-list'>
         {items.length > 0 ? items.map((item) => {
