@@ -32,7 +32,7 @@ const ItemCount = ({stocks, initials, agregarCarrito}) => {
                         <input readOnly={true} type="text" className='block h-full w-full rounded-md pl-10 pr-5 text-center
                         border-0 focus:ring-0'
                                value={comprar}/>
-                        <div className='absolute inset-y-0 right-0 h-full flex'>
+                        <div className='absolute inset-y-1 right-0 h-full flex'>
                             <div className='h-full w-5 flex flex-col justify-between'>
                                 <button type='button' onClick={up}
                                         className='btnUp'>
