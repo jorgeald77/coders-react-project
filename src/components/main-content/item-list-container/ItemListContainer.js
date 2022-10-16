@@ -8,7 +8,7 @@ function ItemListContainer() {
     return (
         <div className='h-full'>
             <div className='category-header'>
-                <h2 className='category-header--title'>{coleccion}</h2>
+                <h2 className='category-header--title'>{typeof coleccion !== 'undefined' ? coleccion : 'promociones'}</h2>
                 <div className='category-header--border'></div>
             </div>
 

@@ -1,5 +1,5 @@
 import {db} from '../../../utils/firebase'
-import {collection as dbCollection, query, where, getDocs} from 'firebase/firestore'
+import {collection as dbCollection, query, where, limit, getDocs} from 'firebase/firestore'
 import './ItemList.css'
 import {useEffect, useState} from "react";
 import Item from "./Item";
@@ -9,7 +9,13 @@ const ItemList = ({collection}) => {
 
     useEffect(() => {
         async function getData() {
-            const queryRef = query(dbCollection(db, 'items'), where('collection', '==', collection))
+            let queryRef;
+            if (typeof collection !== 'undefined') {
+                queryRef = query(dbCollection(db, 'items'), where('collection', '==', collection))
+            } else {
+                queryRef = query(dbCollection(db, 'items'), limit(Math.trunc(Math.ceil(Math.random() * 10))))
+            }
+
             const response = await getDocs(queryRef);
             const data = response.docs.map(el => {
                 return {

@@ -27,11 +27,10 @@ const ItemCount = ({stocks, initials, agregarCarrito}) => {
                 <div className='my-4 flex flex-col items-center space-y-4'>
                     <div className='place-self-start relative h-10 w-24 mt-1 rounded-md shadow-sm'>
                         <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2'>
-                            <span className='text-stone-400 text-sm'>Cant:</span>
+                            <span className='text-stone-400 text-sm mt-1.5'>Cant:</span>
                         </div>
                         <input readOnly={true} type="text" className='block h-full w-full rounded-md pl-10 pr-5 text-center
-                        border-0 focus:ring-0'
-                               value={comprar}/>
+                        border-0 focus:ring-0' value={comprar}/>
                         <div className='absolute inset-y-1 right-0 h-full flex'>
                             <div className='h-full w-5 flex flex-col justify-between'>
                                 <button type='button' onClick={up}
