@@ -1,5 +1,5 @@
 .img-card {
-    @apply p-0.5 bg-stone-900 rounded border;
+    @apply p-0.5 bg-stone-700 rounded border min-w-[15rem] min-h-[15rem];
 }
 
 .btn-verdetalle {

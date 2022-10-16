@@ -34,7 +34,7 @@ export default function OverviewCompra({compra}) {
             </div>
 
             <Link to='/'>
-                <button className='mt-10'>inicio</button>
+                <button className='btn-info'>inicio</button>
             </Link>
         </div>
     )

@@ -8,9 +8,9 @@ export default function Contacto() {
     const handlerSubmit = (event) => {
         event.preventDefault();
         let duda = {
-            'nombre': event.target[0].value,
-            'email': event.target[1].value,
-            'mensaje': event.target[2].value
+            'nombre': event.target.nombre.value,
+            'email': event.target.correo.value,
+            'mensaje': event.target.mensaje.value
         }
 
         addDoc(collection(db, 'dudas'), duda)

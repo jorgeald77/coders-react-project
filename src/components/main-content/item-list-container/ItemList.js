@@ -23,18 +23,22 @@ const ItemList = ({collection}) => {
         getData()
     }, [collection])
 
-    return (<div className='item-list'>
-        {items.length > 0 ? items.map((item) => {
-            return (<Item
-                key={item.sku}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-                stock={item.stock}
-                pictureUrl={item.pictureUrl}
-            />)
-        }) : <p>Cargando</p>}
-    </div>)
+    return (
+        <div className='item-list'>
+            {items.length > 0 ? items.map((item) => {
+                return (
+                    <Item
+                        key={item.sku}
+                        id={item.id}
+                        title={item.title}
+                        price={item.price}
+                        stock={item.stock}
+                        pictureUrl={item.pictureUrl}
+                    />
+                )
+            }) : <p>Cargando</p>}
+        </div>
+    )
 }
 
 export default ItemList

@@ -38,3 +38,7 @@ input, textarea {
 .btn-info {
     @apply py-2 px-3 w-full rounded bg-stone-500 text-stone-200 font-medium tracking-widest uppercase hover:bg-stone-900 transition-colors duration-300;
 }
+
+.btn-compra {
+    @apply py-2 w-full rounded bg-red-900 text-stone-300 font-medium tracking-widest uppercase hover:bg-red-700 transition-colors duration-300;
+}
