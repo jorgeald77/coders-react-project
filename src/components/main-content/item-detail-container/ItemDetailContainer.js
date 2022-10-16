@@ -24,7 +24,13 @@ const ItemDetailContainer = () => {
 
     return (<div className='my-10'>
         <section className='section-items'>
-            <ItemDetail item={item}/>
+            {
+                item.hasOwnProperty('id')
+                    ?
+                    <ItemDetail item={item}/>
+                    :
+                    "Cargando..."
+            }
         </section>
     </div>)
 }
