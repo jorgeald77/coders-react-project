@@ -11,6 +11,9 @@ Este proyecto es un carrito de compra implementado React y Firebase, realizado p
 ## Ejecutar
 - npm start
 
+## Como funciona el sitio
+- https://youtu.be/KzCAMdGTYVc
+
 
 ## Entregables
 
