@@ -1,5 +1,5 @@
 # CODERHOUSE - React Js
-Este proyecto es un carrito de compra realizado con React y Firebase, realizado por Jorge Guzmán Aguilar en el curso de React de Coderhouse.
+Este proyecto es un carrito de compra implementado React y Firebase, realizado por Jorge Guzmán Aguilar en el curso de React de Coderhouse.
 
 
 ## Clonar pryecto
