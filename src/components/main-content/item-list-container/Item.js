@@ -6,7 +6,7 @@ const Item = (props) => {
         <div className='card-item'>
             <div className='wrap-img'>
                 <Link to={`/producto/${props.id}`}>
-                    <img src={`${props.pictureUrl}`} alt='image' className='img-card' loading='lazy'/>
+                    <img src={`${props.pictureUrl}`} alt='item' className='img-card' loading='lazy'/>
                 </Link>
             </div>
 

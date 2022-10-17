@@ -40,7 +40,7 @@ export default function Contacto() {
                                 </div>
 
                                 {
-                                    folio == ""
+                                    folio === ""
                                         ?
                                         <div className='col-span-6'>
                                             <button type="submit" className='btn-info'>Enviar</button>

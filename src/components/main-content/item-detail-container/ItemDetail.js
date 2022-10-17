@@ -15,7 +15,7 @@ function ItemDetail({item}) {
     return (
         <div className='item-detail-container'>
             <div className='item-detail-container-image'>
-                <img src={`${item.pictureUrl}`} alt="image" className='item-detail-img'/>
+                <img src={`${item.pictureUrl}`} alt="item" className='item-detail-img'/>
             </div>
 
             <div className='category-header'>
