@@ -4,7 +4,6 @@ import {db} from "../../utils/firebase";
 
 export default function Contacto() {
     const [folio, setFolio] = useState('')
-
     const handlerSubmit = (event) => {
         event.preventDefault();
         let duda = {
@@ -12,16 +11,14 @@ export default function Contacto() {
             'email': event.target.correo.value,
             'mensaje': event.target.mensaje.value
         }
-
         addDoc(collection(db, 'dudas'), duda)
             .then(({id}) => setFolio(id))
     }
 
     return (
         <div>
-            <div className='category-header'>
-                <h2 className='category-header--title'>Contáctanos</h2>
-                <div className='category-header--border'></div>
+            <div className='header-title'>
+                <h1>Contáctanos<span/></h1>
             </div>
 
             <div className='mx-auto mt-10 w-1/2'>

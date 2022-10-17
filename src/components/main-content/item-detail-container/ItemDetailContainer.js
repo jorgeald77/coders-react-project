@@ -7,7 +7,6 @@ import {useParams} from "react-router-dom";
 const ItemDetailContainer = () => {
     const {productoId} = useParams()
     const [item, setItem] = useState({})
-
     useEffect(() => {
         async function getItem() {
             const queryRef = doc(db, 'items', productoId)
@@ -22,17 +21,19 @@ const ItemDetailContainer = () => {
         getItem()
     }, [productoId])
 
-    return (<div className='my-10'>
-        <section className='section-items'>
-            {
-                item.hasOwnProperty('id')
-                    ?
-                    <ItemDetail item={item}/>
-                    :
-                    "Cargando..."
-            }
-        </section>
-    </div>)
+    return (
+        <div className='my-10'>
+            <section className='section-items'>
+                {
+                    item.hasOwnProperty('id')
+                        ?
+                        <ItemDetail item={item}/>
+                        :
+                        "Cargando..."
+                }
+            </section>
+        </div>
+    )
 }
 
 export default ItemDetailContainer

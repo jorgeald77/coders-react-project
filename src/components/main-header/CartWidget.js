@@ -11,7 +11,7 @@ function CartWidget() {
             <div className='cart-container'>
                 <div className='text-right'>
                     <p>mis compras</p>
-                    <p className='text-xs text-stone-500 lowercase'>
+                    <p className='subtext'>
                         {value.cantidad} productos
                     </p>
                     <p className='text-moneda font-bold text-red-700'>

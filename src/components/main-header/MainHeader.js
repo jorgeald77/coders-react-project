@@ -10,18 +10,19 @@ function MainHeader() {
                 <div className='slogan-logo'>
                     <Link to='/'>
                         <img src={logo} alt="logo react" className='w-28'/>
+                        <p>Home</p>
                     </Link>
                 </div>
             </div>
 
             <div className='header-main-mask'>
-                <div className='h-12 w-full bg-stone-700'/>
+                <div/>
             </div>
 
             <div className='header-main-menu-container'>
-                <div className='main-links flex-1'>
-                    <nav className='h-full'>
-                        <ul className='flex justify-around items-center h-full'>
+                <div className='main-links'>
+                    <nav>
+                        <ul>
                             <li>
                                 <Link to='/promociones'>
                                     <div className='flex space-x-2'>
@@ -36,20 +37,22 @@ function MainHeader() {
                                 </Link>
                             </li>
                             <li>
-                                    <Link to='/contacto'>
-                                        <div className='block text-right hidden md:inline-block'>
+                                <Link to='/contacto' className='hidden md:block'>
+                                    <div className='flex flex-row text-right gap-x-2'>
+                                        <div>
                                             <p>dudas</p>
-                                            <p className='text-xs text-stone-500 lowercase'>
-                                                contacto@empresa.com
-                                            </p>
+                                            <p className='subtext'>contacto@empresa.com</p>
                                         </div>
-                                    </Link>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 hidden md:inline-block" fill="none"
-                                         viewBox="0 0 24 24"
-                                         stroke="currentColor" strokeWidth="2">
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-                                    </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             className="h-10 w-10"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke="currentColor" strokeWidth="1.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
+                                                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                                        </svg>
+                                    </div>
+                                </Link>
                             </li>
                             <li>
                                 <CartWidget/>
@@ -58,15 +61,26 @@ function MainHeader() {
                     </nav>
                 </div>
 
-                <div className='main-menu h-12 bg-stone-700'>
-                    <nav className='h-full'>
-                        <ul className='flex justify-center items-center gap-x-20 h-full'>
+                <div className='main-menu'>
+                    <nav>
+                        <ul>
                             <li>
-                                <Link to='/'>
-                                    <button>inicio</button>
+                                <Link to='/categoria/running'>
+                                    <button>running</button>
                                 </Link>
                             </li>
                             <li>
+                                <Link to='/categoria/senderismo'>
+                                    <button>senderismo</button>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to='/categoria/trail'>
+                                    <button>trail</button>
+                                </Link>
+                            </li>
+                            <li className='hidden md:inline-block'>
                                 <Link to='/conocenos'>
                                     <button>conócenos</button>
                                 </Link>
