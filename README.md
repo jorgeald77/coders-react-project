@@ -1,10 +1,16 @@
 # CODERHOUSE - React Js
+Este proyecto es un carrito de compra realizado con React y Firebase, realizado por Jorge Guzmán Aguilar en el curso de React de Coderhouse.
 
 
-## Clonar e instalar proyecto
+## Clonar pryecto
 - git clone [protocol]://github.com/jorgeald77/coders-react-project.git
+
+## Instalar dependencias
 - npm install
+
+## Ejecutar
 - npm start
+
 
 ## Entregables
 
