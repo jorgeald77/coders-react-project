@@ -26,3 +26,47 @@
 .main-content > footer {
     grid-area: foot;
 }
+
+label {
+    @apply block text-sm font-medium text-gray-700;
+}
+
+input, textarea {
+    @apply p-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm;
+}
+
+.btn-info {
+    @apply py-2 px-3 w-full rounded bg-stone-500 text-stone-200 font-medium tracking-widest uppercase hover:bg-stone-900 transition-colors duration-300;
+}
+
+.btn-compra {
+    @apply py-2 w-full rounded bg-red-900 text-stone-300 font-medium tracking-widest uppercase hover:bg-red-700 transition-colors duration-300;
+}
+
+.header-title {
+    @apply my-4;
+}
+
+.header-title h1:first-child {
+    @apply text-2xl font-bold text-stone-700 tracking-tight capitalize;
+}
+
+.header-title span:first-child {
+    @apply w-1/2 h-1 rounded-l-full bg-gradient-to-r from-red-500 block;
+}
+
+.header-subtitle {
+    @apply text-xl font-bold text-stone-700 tracking-tight capitalize;
+}
+
+.subtitle {
+    @apply text-lg font-semibold text-stone-700 tracking-tight capitalize;
+}
+
+.subtext {
+    @apply text-xs text-stone-500 lowercase;
+}
+
+.text-moneda::before {
+    content: "$ ";
+}

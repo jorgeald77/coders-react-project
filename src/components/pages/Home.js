@@ -10,7 +10,7 @@ export default function Home() {
             <div className='home-header-container'>
                 <div className='home-header-bg'/>
                 <div className='home-header-title'>
-                    <p className='uppercase font-semibold text-5xl md:text-left'>CONECTA CON LA NATURALEZA</p>
+                    <p>CONECTA CON LA NATURALEZA</p>
                 </div>
             </div>
 

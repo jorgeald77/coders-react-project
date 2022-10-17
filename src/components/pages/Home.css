@@ -11,6 +11,10 @@
     md:absolute md:top-[240px] md:bg-opacity-70 md:w-1/3 md:h-1/3;
 }
 
+.home-header-title p:first-child {
+    @apply uppercase font-semibold text-5xl md:text-left;
+}
+
 .home-categoria-container {
     @apply flex flex-wrap justify-evenly;
 }

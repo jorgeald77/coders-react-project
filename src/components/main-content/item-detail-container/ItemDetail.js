@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 function ItemDetail({item}) {
     const value = useContext(CartContext)
     const [comprar, setComprar] = useState(0)
-
     const agregarCarrito = (data) => {
         setComprar(parseInt(data))
         value.add(item, data)
@@ -16,19 +15,25 @@ function ItemDetail({item}) {
     return (
         <div className='item-detail-container'>
             <div className='item-detail-container-image'>
-                <img src={`${item.pictureUrl}800?random=${item.id}`} alt=""
-                     className='item-detail-img'/>
+                <img src={`${item.pictureUrl}`} alt="image" className='item-detail-img'/>
             </div>
 
             <div className='category-header'>
-                <h2 className='category-header--title'>{item.title}</h2>
-                <div className='category-header--border'></div>
+                <div className='header-title'>
+                    <h1>{item.title}<span/></h1>
+                </div>
 
                 <p className='text-sm mt-6'>{item.description}</p>
                 <p className='item-price mt-4'>$ {item.price}</p>
-                {comprar > 0 ? <Link to={'/cart'}>
-                    <button className='button-agregar'>Ver carrito</button>
-                </Link> : <ItemCount stocks={item.stock} initials='1' agregarCarrito={agregarCarrito}/>}
+                {
+                    comprar > 0
+                        ?
+                        <Link to={'/cart'}>
+                            <button className='button-agregar'>Ver carrito</button>
+                        </Link>
+                        :
+                        <ItemCount stocks={item.stock} initials='1' agregarCarrito={agregarCarrito}/>
+                }
 
                 <div>
                     <details className="border-t-2 duration-300">
@@ -82,9 +87,10 @@ function ItemDetail({item}) {
                         </div>
                     </details>
                 </div>
-                <p className='text-xs'>sku: {item.sku}</p>
+                <p className='subtext'>sku: {item.sku}</p>
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default ItemDetail

@@ -1,7 +1,13 @@
-.img-card {
-    @apply p-0.5 bg-stone-900 rounded border;
+.card-item {
+    @apply flex flex-col justify-between w-60 shadow rounded pb-3;
 }
 
-.btn-verdetalle {
-    @apply py-2 px-3 w-full rounded bg-stone-500 text-stone-200 text-sm tracking-wide uppercase hover:bg-stone-900 transition-colors duration-300;
+.card-item--info {
+    @apply flex flex-col h-full justify-between text-xs px-2 pt-3;
+}
+.wrap-img {
+    @apply bg-stone-700 rounded border min-w-[15rem] min-h-[15rem] overflow-hidden;
+}
+.img-card {
+    @apply p-0.5 rounded min-w-[14rem] min-h-[14rem] hover:scale-150 ease-in-out duration-300;
 }
